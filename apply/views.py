@@ -17,7 +17,7 @@ def send_info(request):
             message = 'exist'
         else:
             name = request.POST.get('name')
-            profession = request.POST.get('toggle')
+            profession = request.POST.get('profession')
             create_apply_object = ApplyModel.objects.create(name=name,email=email,profession=profession)
             create_apply_object.save()
             request.session['email'] = email
